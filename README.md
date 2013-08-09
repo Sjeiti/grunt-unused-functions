@@ -1,4 +1,4 @@
-# unused-functions
+# grunt-unused-functions
 
 > Use a test suite to filter out unused functions to an output file.
 
@@ -8,13 +8,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install unused-functions --save-dev
+npm install grunt-unused-functions --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('unused-functions');
+grunt.loadNpmTasks('grunt-unused-functions');
 ```
 
 ## The "unused_functions" task

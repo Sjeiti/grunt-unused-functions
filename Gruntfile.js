@@ -1,6 +1,6 @@
 /*
- * unused-functions
- * https://github.com/Sjeiti/unused-functions
+ * grunt-unused-functions
+ * https://github.com/Sjeiti/grunt-unused-functions
  *
  * Copyright (c) 2013 Ron Valstar
  * Licensed under the MIT license.

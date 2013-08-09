@@ -10,6 +10,8 @@
 
 module.exports = function (grunt) {
 
+	var fs = require('fs');
+
 	// Please see the Grunt documentation for more information regarding task
 	// creation: http://gruntjs.com/creating-tasks
 
