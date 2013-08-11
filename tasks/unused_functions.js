@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
+//'use strict';
 
 module.exports = function (grunt) {
 
@@ -83,12 +83,14 @@ module.exports = function (grunt) {
 			}
 			iFnLines = aFnLines.length;
 			sNewFile = aLines.join('\n')+(f.append||'');
-			fs.writeFileSync(f.dest,sNewFile);
+			//fs.writeFileSync(f.dest,sNewFile);
 			//
 			// count unused functions
 			f.prepare&&f.prepare();
 			for (i=0;i<iLines;i++) oCountPrints[aFnLines[i]] = 0;
-			require(f.dest);
+			//require(f.dest);
+			//module.parent.require('./'+f.dest);
+			eval(sNewFile);
 			f.test&&f.test();
 			//
 			// gather result data
