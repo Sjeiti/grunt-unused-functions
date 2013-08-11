@@ -20,7 +20,7 @@ module.exports = function (grunt) {
 					disable: true
 					,mark: 'UNUSED'
 					,uglify: true
-					,uglifyOptions: null // see: https://github.com/mishoo/UglifyJS2#compressor-options
+					,uglifyOptions: {warnings:false} // see: https://github.com/mishoo/UglifyJS2#compressor-options
 					,replace: true
 				})
 			,i
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 			// let uglify compress it
 			if (oOptions.uglify) {
 				uglify = require('uglify-js');
-				oCompressor = uglify.Compressor(oOptions.uglifyOptions||{warnings:false});
+				oCompressor = uglify.Compressor(oOptions.uglifyOptions);
 				oAst = uglify.parse(sNewFile);
 				oAst.figure_out_scope();
 				oAst = oAst.transform(oCompressor);

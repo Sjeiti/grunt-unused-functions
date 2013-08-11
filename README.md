@@ -37,17 +37,35 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.disable
+Type: `Boolean`
+Default value: `true`
+
+Disable the unused fuction.
+
+#### options.mark
 Type: `String`
-Default value: `',  '`
+Default value: `'UNUSED'`
 
-A string value that is used to do something with whatever.
+Marks the unused function with a comment.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
+#### options.uglify
+Type: `Boolean`
+Default value: `true`
 
-A string value that is used to do something else with whatever else.
+Uglifies the resulting script to reduce the filesize.
+
+#### options.uglifyOptions
+Type: `Object`
+Default value: `{warnings:false}`
+
+Default uglify options. See: https://github.com/mishoo/UglifyJS2#compressor-options
+
+#### options.replace
+Type: `Boolean`
+Default value: `true`
+
+Small optimisations after uglification.
 
 ### Usage Examples
 
@@ -81,9 +99,3 @@ grunt.initConfig({
   },
 })
 ```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
