@@ -70,32 +70,22 @@ Small optimisations after uglification.
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+This setup will test 'myLib' for unused functions after calling myLib.foo() and myLib.bar(). Unused functions are truncated into a minified version.
 
 ```js
 grunt.initConfig({
   unused_functions: {
     options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  unused_functions: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+	emmet: {
+		src: './temp/myLib.js',
+		dest: './temp/myLib.min.js',
+		append: '\n;GLOBAL.myLib=myLib;',
+		prepare: function(){},
+		test: function(){
+			myLib.foo();
+			myLib.bar();
+		}
+	}
+  }
 })
 ```
